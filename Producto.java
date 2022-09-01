@@ -31,7 +31,7 @@
         calcularIva();
     }
 
-    public void mostrarDatos() {
+    public void imprimirProducto () {
         System.out.println("Codigo: " + codigo + " Precio: " + precio + " Iva: " + iva + " Cantidad: " + " Total: " + total);
     }
 
