@@ -7,6 +7,7 @@ public class ClasePrincipal {
         static Integer Iva;
         static Integer total;
         static Integer cantidad;
+        static Integer cantidadProductos;
         static Integer total2;
 
         public static void main (String[] args) {
@@ -14,9 +15,6 @@ public class ClasePrincipal {
             Scanner productos =new Scanner (System.in);
 
             System.out.println("******FACTURA******");
-
-            System.out.println("digite el producto");
-            codigo= productos.nextLine();
             System.out.println("Cuantos productos vas a llevar");
             cantidad =  productos.nextInt();
 
@@ -25,22 +23,20 @@ public class ClasePrincipal {
                 cantidad =  productos.nextInt();
             }
 
-            System.out.println("Cual es el precio");
-            precio =  productos.nextInt();
+            Factura facturaDeUsuario = new Factura(cantidad);
 
-            while(precio<1){
-                System.out.println("Digite valores reales");
-                precio =  productos.nextInt();
+            for (Integer c = 0; c < cantidad ; c++) {
+                
+                System.out.println("digite el codigo");
+                codigo = productos.nextLine();
+                System.out.println("digite el precio");
+                precio = productos.nextInt();
+                System.out.println("digite la cantidad");
+                cantidadProductos = productos.nextInt();
+
+                facturaDeUsuario.agregarProducto(codigo, precio, cantidadProductos);
             }
 
-            calcularImpuesto();
+            facturaDeUsuario.imprimirFactura();
         }
-        //pasarlo a Producto
-        public static void calcularImpuesto(){
-            total= cantidad*precio;
-            Iva=(total*19)/100;
-            total2=total+Iva;
-            System.out.println("El valor total con iva es " + Iva);
-        }
-
 }
