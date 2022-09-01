@@ -28,7 +28,8 @@ public class Factura {
 
     public void imprimirFactura() {
         for(Integer c = 0; c < cantidad; c++ ) {
-            
+            Producto productoActual = listaDeProductos[c];
+            productoActual.imprimirProducto();
         }
     }
 
