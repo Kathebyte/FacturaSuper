@@ -1,4 +1,4 @@
- public class Producto {    
+public class Producto {    
     
     // Atributos
     private String codigo;
@@ -18,7 +18,7 @@
 
     //Metodos
     private void calcularIva() {
-        iva = total * (19 / 100);
+        iva = (total * 19)/ 100;
     }
 
     private void calcularTotal() {
